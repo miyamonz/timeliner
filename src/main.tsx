@@ -1,6 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { Provider } from "./store";
 import App from "./App";
 
-ReactDOM.render(<App />, document.querySelector("#app"));
+ReactDOM.render(
+  <Provider>
+    <App />
+  </Provider>,
+  document.querySelector("#app")
+);

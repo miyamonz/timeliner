@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import useStore from "./store";
 import useTimer from "./useTimer";
-import CueAdder from "./CueAdder";
-import Cue from "./Cue";
-import { LineV } from "./ScreenComponents";
+import CueAdder from "./components/CueAdder";
+import Cue from "./components/Cue";
+import { LineV } from "./components/ScreenComponents";
 
 export default function App() {
   const ref = useRef();

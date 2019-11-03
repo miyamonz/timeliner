@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import useStore from "./store";
+import useStore from "../store";
 import { LineV } from "./ScreenComponents";
 
 export default function Cue({ time, onClick }) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import useStore from "./store";
+import useStore from "../store";
 
 export default function LineWithScreenWidth(props) {
   const [{ viewbox }] = useStore();

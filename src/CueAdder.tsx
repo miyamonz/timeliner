@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import useStore from "./store";
+import { LineV } from "./LineThin";
 
 export default function CueAdder({ svg, onAdd }) {
   const [cur, setCur] = useState(null);
@@ -9,12 +10,12 @@ export default function CueAdder({ svg, onAdd }) {
       <text x={cur} y={20}>
         {cur}
       </text>
-      {cur && <rect x={cur} y={0} width={1} height={height * 100} />}
+      {cur && <LineV x={cur} />}
       <rect
         x={0}
         y={0}
         width={"100%"}
-        height={"100%"}
+        height={height}
         fill="transparent"
         stroke="yellow"
         onPointerMove={e => {

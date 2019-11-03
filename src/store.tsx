@@ -2,7 +2,14 @@ import React, { useReducer, useContext } from "react";
 
 const initialState = {
   time: 0,
-  height: 10
+  play: true,
+  height: 10,
+  viewbox: {
+    x: 0,
+    y: 0,
+    width: 100,
+    height: 10
+  }
 };
 const Store = React.createContext();
 
@@ -15,8 +22,10 @@ const reducer = (state = {}, action) => {
   return state;
 };
 
+export const state = {};
 const Provider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [_state, dispatch] = useReducer(reducer, initialState);
+  state = _state;
   return <Store.Provider value={[state, dispatch]}>{children}</Store.Provider>;
 };
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useStore from "./store";
-import { LineV } from "./LineThin";
+import { LineV } from "./ScreenComponents";
 
 export default function Cue({ time, onClick }) {
   const [{ height }] = useStore();

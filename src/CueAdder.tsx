@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import useStore from "./store";
-import { LineV } from "./LineThin";
+import { LineV } from "./ScreenComponents";
 
 export default function CueAdder({ svg, onAdd }) {
   const [cur, setCur] = useState(null);

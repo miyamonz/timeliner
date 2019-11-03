@@ -3,7 +3,7 @@ import useStore from "./store";
 import useTimer from "./useTimer";
 import CueAdder from "./CueAdder";
 import Cue from "./Cue";
-import { LineV } from "./LineThin";
+import { LineV } from "./ScreenComponents";
 
 export default function App() {
   const ref = useRef();

@@ -19,7 +19,7 @@ export default function App() {
           }))
         }
       >
-        {play ? "stop" : "play"}{" "}
+        {play ? "stop" : "play"}
       </button>
       {time}
 

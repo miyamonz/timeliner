@@ -18,3 +18,12 @@ export function LineH(props) {
     <LineWithScreenWidth {...props} y1={x} y2={x} x1={0} x2={viewbox.width} />
   );
 }
+
+export function Text(props) {
+  const { children } = props;
+  return (
+    <text {...props} fontSize={1}>
+      {children}
+    </text>
+  );
+}

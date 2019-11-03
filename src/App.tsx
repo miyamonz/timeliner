@@ -1,15 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import useStore from "./store";
 import useTimer from "./useTimer";
-import CueAdder from "./components/CueAdder";
-import Cue from "./components/Cue";
-import { LineV } from "./components/ScreenComponents";
+import AppSVG, { useSVG } from "./AppSVG";
 
 export default function App() {
-  const ref = useRef();
+  const [{ play }, dispatch] = useStore();
   const [time, setTime] = useTimer();
-  const [{ height, viewbox, play }, dispatch] = useStore();
-  const [events, setEvents] = useState([]);
   return (
     <>
       <button
@@ -22,26 +18,8 @@ export default function App() {
         {play ? "stop" : "play"}
       </button>
       {time}
+      <AppSVG />
 
-      <svg
-        width={"100vw"}
-        height={500}
-        ref={ref}
-        viewBox={`${viewbox.x} ${viewbox.y} ${viewbox.width} ${viewbox.height}`}
-      >
-        <CueAdder
-          svg={ref.current}
-          onAdd={n => setEvents(prev => [...prev, n])}
-        />
-        {events.map(n => (
-          <Cue
-            key={n}
-            time={n}
-            onClick={() => setEvents(prev => prev.filter(t => t !== n))}
-          />
-        ))}
-        <LineV x={time} />
-      </svg>
       <button onClick={() => setTime(0)}>reset</button>
     </>
   );

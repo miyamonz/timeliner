@@ -22,7 +22,7 @@ const reducer = (state = {}, action) => {
   return state;
 };
 
-export const state = {};
+export const state = initialState;
 const Provider = ({ children }) => {
   const [_state, dispatch] = useReducer(reducer, initialState);
   state = _state;
